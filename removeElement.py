@@ -2,10 +2,12 @@ class Solution:
     def removeElement(self, nums: int(), val: int) -> int:
         if len(nums) == 0:
             return 0
-        nums = list.sort(nums)
         i = 0
-        for j in range(1, len(nums)):
-            
+        for j in range(0, len(nums)):
+            if nums[j] != val:
+                nums[i] = nums[j]
+                i = i + 1
+        return i
 
 solution = Solution()
-solution.removeElement([1,2,3,2,1], 2)
+solution.removeElement([3,3,4,4,3, 4, 5], 3)
