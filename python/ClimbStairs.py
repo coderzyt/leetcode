@@ -15,5 +15,5 @@ class ClimbStairs(object):
 
 if __name__ == "__main__":
     climbStairs = ClimbStairs()
-    result = climbStairs.climb_stairs(4)
+    result = climbStairs.climb_stairs(5)
     print(result)
