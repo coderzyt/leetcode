@@ -19,12 +19,13 @@ class Solution:
                 cur = cur.next
         return head
 
-node1 = ListNode(1, None)
-node2 = ListNode(2, node1)
-node3 = ListNode(3, node2)
-node4 = ListNode(4, node3)
-node5 = ListNode(5, node4)
+if __name__ == "__main__":
+    node1 = ListNode(1, None)
+    node2 = ListNode(2, node1)
+    node3 = ListNode(3, node2)
+    node4 = ListNode(4, node3)
+    node5 = ListNode(5, node4)
 
-solution = Solution()
-result = solution.removeElements(node5, 3)
-print(result)
+    solution = Solution()
+    result = solution.removeElements(node5, 3)
+    print(result)
