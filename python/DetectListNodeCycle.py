@@ -1,5 +1,6 @@
 from python.ListNode import ListNode
 
+
 class DetectListNodeCycle(object):
     def detectCycle(self, head: ListNode) -> ListNode:
         if head is None or head.next is None:

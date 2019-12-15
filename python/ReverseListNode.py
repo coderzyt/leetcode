@@ -1,10 +1,11 @@
 from python.ListNode import ListNode
 
+
 class ReverseListNode(object):
-    
+
     def reverse_list_node(self, head: ListNode):
         if head is None or head.next is None:
-            return  head
+            return head
         pre = None
         cur = head
         next = None
@@ -13,8 +14,9 @@ class ReverseListNode(object):
             cur.next = pre
             pre = cur
             cur = next
-        
+
         return pre
+
 
 if __name__ == "__main__":
     node1 = ListNode(1, None)

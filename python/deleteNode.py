@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = y
 
+
 class Solution:
     def deleteNode(self, node: ListNode):
         """
@@ -12,6 +13,7 @@ class Solution:
         """
         node.val = node.next.val
         node.next = node.next.next
+
 
 node1 = ListNode(1, None)
 node2 = ListNode(2, node1)
@@ -22,4 +24,3 @@ node5 = ListNode(5, node4)
 solution = Solution()
 solution.deleteNode(node3)
 print(node3)
-

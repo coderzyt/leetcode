@@ -9,5 +9,6 @@ class Solution:
                 i = i + 1
         return i
 
+
 solution = Solution()
-solution.removeElement([3,3,4,4,3, 4, 5], 3)
+solution.removeElement([3, 3, 4, 4, 3, 4, 5], 3)

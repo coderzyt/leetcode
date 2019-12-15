@@ -1,5 +1,6 @@
 from python.ListNode import ListNode
 
+
 class ListNodeHasCycle(object):
 
     def hasCycle2(self, head: ListNode) -> bool:
@@ -13,7 +14,7 @@ class ListNodeHasCycle(object):
             slow = slow.next
             fast = fast.next.next
         return True
-    
+
     def hasCycle(self, head: ListNode) -> bool:
         if head is None or head.next is None:
             return False
@@ -30,6 +31,7 @@ class ListNodeHasCycle(object):
                 return False
         return False
 
+
 if __name__ == "__main__":
     node1 = ListNode(1, None)
     node2 = ListNode(2, node1)
@@ -41,8 +43,3 @@ if __name__ == "__main__":
 
     hasCycle = ListNodeHasCycle()
     print(hasCycle.hasCycle(node5))
-
-
-        
-            
-            

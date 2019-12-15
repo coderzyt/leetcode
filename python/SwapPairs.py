@@ -1,7 +1,8 @@
 from python.ListNode import ListNode
 
+
 class SwapPairs(object):
-    
+
     def swap_pairs(self, head: ListNode) -> ListNode:
         if head is None or head.next is None:
             return head
@@ -16,10 +17,9 @@ class SwapPairs(object):
             second.next = first
             first.next = next_second
             cur = next_first
-            
+
         return first
 
-        
 
 if __name__ == "__main__":
     node1 = ListNode(1, None)
@@ -30,4 +30,3 @@ if __name__ == "__main__":
     node6 = ListNode(6, node5)
     swapPairs = SwapPairs()
     print(swapPairs.swap_pairs(node6))
-        

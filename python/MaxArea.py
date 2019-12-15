@@ -3,7 +3,7 @@ class MaxArea(object):
         length = height.__len__()
         max = 0
         for i in range(0, length):
-            for j in range(i+1, length):
+            for j in range(i + 1, length):
                 cur = (height[i] if height[i] < height[j] else height[j]) * (j - i)
                 max = cur if cur >= max else max
         return max
@@ -23,7 +23,8 @@ class MaxArea(object):
                 j = j - 1
         return max
 
+
 if __name__ == "__main__":
-    param = [1,8,6,2,5,4,8,3,7]
+    param = [1, 8, 6, 2, 5, 4, 8, 3, 7]
     maxArea = MaxArea()
     print(maxArea.getMaxArea2(param))

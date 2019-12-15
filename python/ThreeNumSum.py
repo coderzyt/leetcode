@@ -1,5 +1,5 @@
 class ThreeNumSum(object):
-    
+
     # 无法去重
     def three_num_sum(self, nums: list) -> list:
 
@@ -22,7 +22,7 @@ class ThreeNumSum(object):
                                     result.append(cur)
                         j = j + 1
                 i = i + 1
-        
+
         return result
 
     def three_num_sum2(self, nums: list) -> list:
@@ -54,6 +54,7 @@ class ThreeNumSum(object):
                 else:
                     R = R - 1
         return result
+
 
 if __name__ == "__main__":
     nums = [-1, 0, 1, 2, -1, -4]

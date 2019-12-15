@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = y
 
+
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         while head and head.val == val:
@@ -18,6 +19,7 @@ class Solution:
                 pre = cur
                 cur = cur.next
         return head
+
 
 if __name__ == "__main__":
     node1 = ListNode(1, None)

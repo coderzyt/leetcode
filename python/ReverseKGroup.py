@@ -49,6 +49,7 @@ class ReverseKGroup(object):
         head.next = cur
         return pre
 
+
 if __name__ == "__main__":
     node6 = Node(6, None)
     node5 = Node(5, node6)

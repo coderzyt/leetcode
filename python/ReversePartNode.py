@@ -28,8 +28,9 @@ class ReversePartNode(object):
         if bPre is not None:
             bPre.next = node1
             return head
-        
+
         return node1
+
 
 if __name__ == "__main__":
     node6 = Node(6, None)
