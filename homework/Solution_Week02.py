@@ -1,33 +1,46 @@
+import collections
+
+
 class Solution(object):
-    
+
+    def twoSum(self, nums: list, target: int) -> list:
+        hashMap = collections.defaultdict(int)
+        for i in range(len(nums)):
+            if hashMap.__contains__(target - nums[i]):
+                return [i, hashMap.get(target - nums[i])]
+            hashMap[nums[i]] = i
+        return []
+
+    def groupAnagrams(self, strs: list) -> list:
+        hashMap = collections.defaultdict(list)
+        for str in strs:
+            count = [0] * 26
+            for char in str:
+                count[ord(char) - ord('a')] += 1
+            hashMap[tuple(count)].append(str)
+        return hashMap.values()
+
     def isAnagram(self, s: str, t: str) -> bool:
-        if s is None or t is None:
+        if len(s) != len(t):
             return False
-        if s == "" and t == "":
-            return True
-        hashMap = {}
-        for i in s:
-            if hashMap.get(i) is None:
-                hashMap.setdefault(i, 1)
-            else:
-                value = hashMap.get(i) + 1
-                hashMap.__setitem__(i, value)
-        for j in t:
-            if hashMap.get(j) is None:
-                return False
-            value = hashMap.get(j) - 1
-            hashMap.__setitem__(j, value)
-        for i in s:
-            if hashMap.get(i) != 0:
+        count = [0] * 26
+        for i in range(len(s)):
+            s_mem = s[i]
+            t_mem = t[i]
+            count[ord(s_mem) - ord('a')] += 1
+            count[ord(t_mem) - ord('a')] -= 1
+        for i in range(len(count)):
+            if count[i] != 0:
                 return False
         return True
 
-if __name__ == "__main__":
-    solution = Solution()
-    s = 'anagram'
-    t = 'nagaram'
-    print(solution.isAnagram(s, t))
-    print(s.index('n'))
-    print(s.find('a'))
-    print(s.replace('a', ''))
-    s.__contains__('a')
+
+# if __name__ == "__main__":
+#     solution = Solution()
+#     s = 'anagram'
+#     t = 'nagaram'
+#     print(solution.isAnagram(s, t))
+#     strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+#     print(solution.groupAnagrams(strs))
+#     nums = [2, 7, 11, 15]
+#     print(solution.twoSum(nums, 9))
