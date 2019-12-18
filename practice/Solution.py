@@ -1,4 +1,20 @@
+from python.ListNode import ListNode
+
+
 class Solution(object):
+
+    def reverseListNode(self, head: ListNode) -> ListNode:
+        if head is None or head.next is None:
+            return head
+        last = None
+        cur = head
+        while cur is not None:
+            next = cur.next
+            cur.next = last
+            last = cur
+            cur = next
+        return last
+
     
     def moveZeros(self, nums: list) -> list:
         if nums is None or len(nums) == 1:
@@ -89,5 +105,12 @@ if __name__ == "__main__":
 
     # print(solution.threeSum(nums))
 
-    height = [1,8,6,2,5,4,8,3,7]
-    print(solution.maxArea(height))
+    # height = [1,8,6,2,5,4,8,3,7]
+    # print(solution.maxArea(height))
+
+    node1 = ListNode(1, None)
+    node2 = ListNode(2, node1)
+    node3 = ListNode(3, node2)
+    node4 = ListNode(4, node3)
+    node5 = ListNode(5, node4)
+    print(solution.reverseListNode(node5))
