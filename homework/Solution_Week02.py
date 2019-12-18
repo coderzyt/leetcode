@@ -20,27 +20,35 @@ class Solution(object):
             hashMap[tuple(count)].append(str)
         return hashMap.values()
 
+    def groupAnagrams2(self, strs: list) -> list:
+        result = {}
+        for str in strs:
+            key = tuple(sorted(str))
+            result[key] = result.get(key, []) + [str]
+        return result.values()
+
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
         count = [0] * 26
         for i in range(len(s)):
-            s_mem = s[i]
-            t_mem = t[i]
-            count[ord(s_mem) - ord('a')] += 1
-            count[ord(t_mem) - ord('a')] -= 1
+            count[ord(s[i]) - ord('a')] += 1
+            count[ord(t[i]) - ord('a')] -= 1
         for i in range(len(count)):
             if count[i] != 0:
                 return False
         return True
 
+    def isAnagram2(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
 
-# if __name__ == "__main__":
-#     solution = Solution()
+
+if __name__ == "__main__":
+    solution = Solution()
 #     s = 'anagram'
 #     t = 'nagaram'
 #     print(solution.isAnagram(s, t))
-#     strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
-#     print(solution.groupAnagrams(strs))
+    strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+    print(solution.groupAnagrams2(strs))
 #     nums = [2, 7, 11, 15]
 #     print(solution.twoSum(nums, 9))
