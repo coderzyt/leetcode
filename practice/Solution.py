@@ -1,3 +1,5 @@
+from typing import List
+
 from python.ListNode import ListNode
 
 
@@ -93,6 +95,21 @@ class Solution(object):
             max = max if area <= max else area
         return max
 
+    def generateParenthesis(self, n: int) -> List[str]:
+        result = List[str]
+        self._generate(0, 0, n, "")
+        return result
+
+    def _generate(self, left: int, right: int, MAX: int, curStr: str, result: List[str]):
+        if left == MAX and right == MAX:
+            result.append(curStr)
+            return
+
+        if left < MAX:
+            self._generate(left + 1, right, MAX, curStr + "(")
+        if left > right:
+            self._generate(left, right + 1, MAX, curStr + ")")
+
 
 if __name__ == "__main__":
     solution = Solution()
@@ -108,9 +125,11 @@ if __name__ == "__main__":
     # height = [1,8,6,2,5,4,8,3,7]
     # print(solution.maxArea(height))
 
-    node1 = ListNode(1, None)
-    node2 = ListNode(2, node1)
-    node3 = ListNode(3, node2)
-    node4 = ListNode(4, node3)
-    node5 = ListNode(5, node4)
-    print(solution.reverseListNode(node5))
+    # node1 = ListNode(1, None)
+    # node2 = ListNode(2, node1)
+    # node3 = ListNode(3, node2)
+    # node4 = ListNode(4, node3)
+    # node5 = ListNode(5, node4)
+    # print(solution.reverseListNode(node5))
+
+    solution.generateParenthesis(3)
