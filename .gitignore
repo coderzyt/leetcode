@@ -9,6 +9,9 @@
 out
 gen
 .vscode
+.vscode/
 venv
 
 *.pyc
+__pycache__
+__pycache__/
