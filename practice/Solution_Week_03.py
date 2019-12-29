@@ -18,7 +18,7 @@ class Solution(object):
                 result = result * x
             return 1 / result
 
-    def subsets(self, nums: List[List[int]]) -> List[List[int]]:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
         result = [[]]
         for num in nums:
             newsets = []
@@ -28,8 +28,21 @@ class Solution(object):
             result.extend(newsets)
         return result
 
+    def subsets2(self, nums: List[int]) -> List[List[int]]:
+        result = [[]]
+        for num in nums:
+            result.extend([[num] + subset for subset in result])
+        return result
+
+    # def subsets3(self, nums: List[int]) -> List[List[int]]:
+    #     result = [[]]
+    #     if nums is None or len(nums) == 0:
+    #         return result
+    #
+    # def generate(self, nums: List[int], ):
+
 if __name__ == "__main__":
     solution = Solution()
     # print(solution.myPow(2, 10))
 
-    print(solution.subsets([1, 2, 3]))
+    print(solution.subsets2([1, 2, 3]))
