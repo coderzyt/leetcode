@@ -23,9 +23,21 @@ class Solution(object):
             res[i] = max(res[i - 1], res[i - 2] + nums[i])
         return res[length - 1]
 
-
+    def rob2(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        length = len(nums)
+        if length == 1:
+            return nums[0]
+        curMax = 0
+        preMax = 0
+        for i in range(length):
+            temp = curMax
+            curMax = max(preMax + nums[i], curMax)
+            preMax = temp
+        return curMax
 
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.rob([2,7,9,3,1]))
+    print(solution.rob2([2,7,9,3,1]))
