@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Warehouse",
+            "request": "launch",
+            "mainClass": "meituan.Warehouse",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch Meituan",
+            "request": "launch",
+            "mainClass": "Meituan",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Foo",
             "request": "launch",
             "mainClass": "Foo",
