@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - Foo",
+            "request": "launch",
+            "mainClass": "Foo",
+            "projectName": "leetcode_e4a4ba47"
+        },
+        {
             "name": "Python: 当前文件",
             "type": "python",
             "request": "launch",
