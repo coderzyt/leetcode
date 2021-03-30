@@ -1,41 +1,45 @@
 package Offer;
 
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
-class Foo {
+public class Foo {
 
-    public Foo() {
-        object1 = new Semaphore(0);
-        object2 = new Semaphore(0);
+    public static void main(String[] args) {
+        isValid("{}");
     }
 
-    public Semaphore object1;
-    public Semaphore object2;
+    public static boolean isValid(String s) {
 
-    public void first(Runnable printFirst) throws InterruptedException {
+        if (s == null || s.length() == 0) {
+            return false;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('{', -1);
+        map.put('}', 1);
+        map.put('[', -2);
+        map.put(']', 2);
+        map.put('{', -3);
+        map.put('}', 3);
 
-        // printFirst.run() outputs "first". Do not change or remove this line.
-        printFirst.run();
+        char[] chars = s.toCharArray();
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(0);
+        for (char c : chars) {
+            int i = map.get(c);
+            if (stack.peek() + i == 0) {
+                stack.pop();
+            } else {
+                stack.push(i);
+            }
+        }
 
-        object1.release();
-
+        if (stack.peek() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void second(Runnable printSecond) throws InterruptedException {
-
-        object1.acquire();
-
-        // printSecond.run() outputs "second". Do not change or remove this line.
-        printSecond.run();
-
-        object2.release();
-    }
-
-    public void third(Runnable printThird) throws InterruptedException {
-
-        object2.acquire();
-        // printThird.run() outputs "third". Do not change or remove this line.
-        printThird.run();
-    }
 }
