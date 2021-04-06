@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DataSourcesLoader",
+            "request": "launch",
+            "mainClass": "multithread.DataSourcesLoader",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConsoleClock",
+            "request": "launch",
+            "mainClass": "multithread.ConsoleClock",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch FileSearch",
+            "request": "launch",
+            "mainClass": "multithread.FileSearch",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch PrimeGenerator",
+            "request": "launch",
+            "mainClass": "multithread.PrimeGenerator",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
             "name": "Launch Warehouse",
             "request": "launch",
             "mainClass": "meituan.Warehouse",
