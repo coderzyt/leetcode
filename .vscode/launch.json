@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MyTask",
+            "request": "launch",
+            "mainClass": "multithread.MyTask",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch SafeTask",
+            "request": "launch",
+            "mainClass": "multithread.SafeTask",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch UnsafeTask",
+            "request": "launch",
+            "mainClass": "multithread.UnsafeTask",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch Task",
+            "request": "launch",
+            "mainClass": "multithread.Task",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
+            "name": "Launch CleanerTask",
+            "request": "launch",
+            "mainClass": "multithread.CleanerTask",
+            "projectName": "leetcode_ef8869cf"
+        },
+        {
+            "type": "java",
             "name": "Launch DataSourcesLoader",
             "request": "launch",
             "mainClass": "multithread.DataSourcesLoader",
