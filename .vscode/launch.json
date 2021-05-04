@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FooBar",
+            "request": "launch",
+            "mainClass": "FooBar",
+            "projectName": "leetcode_3c92bcd0"
+        },
+        {
+            "type": "java",
+            "name": "Launch FooBar",
+            "request": "launch",
+            "mainClass": "multithread.FooBar",
+            "projectName": "leetcode_3c92bcd0"
+        },
+        {
+            "type": "java",
             "name": "Launch MyTask",
             "request": "launch",
             "mainClass": "multithread.MyTask",
